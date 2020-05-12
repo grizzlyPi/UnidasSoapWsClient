@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "defaul-uri",
+    "type": "java.lang.String",
+    "description": "A description for 'defaul-uri'"
+  },
+  {
+    "name": "client-user-name",
+    "type": "java.lang.String",
+    "description": "A description for 'client-user-name'"
+  },
+  {
+    "name": "client-user-password",
+    "type": "java.lang.String",
+    "description": "A description for 'client-user-password'"
+  }
+]}
