@@ -1,0 +1,52 @@
+<definitions
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://ws.sic.norti/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://ws.sic.norti/" name="Proposta">
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://ws.sic.norti/"
+				schemaLocation="file:///C:/Users/Sr.%20e%20Sra.%20Lima/JAVA/ws-sts-norti/UnidasSoapWsClient/src/main/resources/xsd/proposta.xsd" />
+		</xsd:schema>
+	</types>
+	<message name="enviarLote">
+		<part name="parameters" element="tns:enviarLote" />
+	</message>
+	<message name="enviarLoteResponse">
+		<part name="parameters" element="tns:enviarLoteResponse" />
+	</message>
+	<portType name="WSpostal">
+		<operation name="enviarLote">
+			<input
+				wsam:Action="http://ws.sic.norti/WSpostal/enviarLoteRequest"
+				message="tns:enviarLote" />
+			<output
+				wsam:Action="http://ws.sic.norti/WSpostal/enviarLoteResponse"
+				message="tns:enviarLoteResponse" />
+		</operation>
+	</portType>
+	<binding name="WSpostalPortBinding" type="tns:WSpostal">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<operation name="enviarLote">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="Proposta">
+		<port name="WSpostalPort" binding="tns:WSpostalPortBinding">
+			<soap:address
+				location="http://treinamento.portalunidassaude.com.br:80/ws/Proposta" />
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,137 @@
+<xs:schema xmlns:tns="http://ws.sic.norti/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+	targetNamespace="http://ws.sic.norti/">
+	<xs:element name="enviarLote" type="tns:enviarLote" />
+	<xs:element name="enviarLoteResponse"
+		type="tns:enviarLoteResponse" />
+	<xs:complexType name="enviarLote">
+		<xs:sequence>
+			<xs:element name="lote" type="tns:loteProposta"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="loteProposta">
+		<xs:sequence>
+			<xs:element name="numeroLote" type="xs:int" />
+			<xs:element name="propostas" type="tns:proposta"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="proposta">
+		<xs:sequence>
+			<xs:element name="anexo" type="xs:string" minOccurs="0" />
+			<xs:element name="anotacaoAdm" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="cbhpmPrincipalCod" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="cbhpmPrincipalDescricao"
+				type="xs:string" minOccurs="0" />
+			<xs:element name="codigosCBHPM" type="tns:codigoCBHPM"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="codproposta" type="xs:int" />
+			<xs:element name="dtAnotacaoAdm" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="dtCirurgia" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="dtEntrada" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="dtEntregaGEOPM" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="fornecedores"
+				type="tns:fornecedorProposta" nillable="true" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="guia" type="xs:string" minOccurs="0" />
+			<xs:element name="itens" type="tns:propostaItem"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="medicoCRM" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="medicoNome" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="numeroProposta" type="xs:int" />
+			<xs:element name="pacienteCodigo" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="pacienteNome" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="prestadorCNPJ" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="prestadorEmail" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="prestadorNome" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="prestadorTelefone" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="prestadorUF" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="protocolo" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="recontratualizacao" type="xs:boolean"
+				minOccurs="0" />
+			<xs:element name="respenvio" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="senha" type="xs:string" minOccurs="0" />
+			<xs:element name="tipoAtendimento" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="codigoCBHPM">
+		<xs:sequence>
+			<xs:element name="codigo" type="xs:string" minOccurs="0" />
+			<xs:element name="descricao" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fornecedorProposta">
+		<xs:sequence>
+			<xs:element name="cnpj" type="xs:string" minOccurs="0" />
+			<xs:element name="razaosocial" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="propostaItem">
+		<xs:sequence>
+			<xs:element name="cnpjValorReferencia" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="codigoANVISA" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="codigoInternoPostal" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="codigoTUS" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="descricaoItem" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="kit" type="xs:int" />
+			<xs:element name="numero" type="xs:int" />
+			<xs:element name="quantidade" type="xs:int" />
+			<xs:element name="similarA" type="xs:int" />
+			<xs:element name="unidade" type="xs:string" minOccurs="0" />
+			<xs:element name="valorReferencia" type="xs:decimal"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="enviarLoteResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:respostaEnviarLote"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="respostaEnviarLote">
+		<xs:sequence>
+			<xs:element name="codigo" type="xs:int" />
+			<xs:element name="listaRetornoPropostas"
+				type="tns:respostaCriarProposta" nillable="true" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="mensagem" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="respostaCriarProposta">
+		<xs:sequence>
+			<xs:element name="anexo" type="xs:string" minOccurs="0" />
+			<xs:element name="criada" type="xs:boolean" />
+			<xs:element name="mensagemErro" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="protocolo" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="senha" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
