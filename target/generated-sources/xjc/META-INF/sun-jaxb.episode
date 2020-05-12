@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+      
+    <!--
+
+Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
+Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
+Gerado em: 2020.05.11 às 09:18:40 PM BRT 
+
+  -->
+      
+    <bindings xmlns:tns="http://ws.sic.norti/" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="com.lucasdelima.client.xsdtojava"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:enviarLote">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.EnviarLote"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:enviarLoteResponse">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.EnviarLoteResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:loteProposta">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.LoteProposta"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:proposta">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.Proposta"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:codigoCBHPM">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.CodigoCBHPM"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:fornecedorProposta">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.FornecedorProposta"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:propostaItem">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.PropostaItem"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:respostaEnviarLote">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.RespostaEnviarLote"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:respostaCriarProposta">
+                  
+            <class ref="com.lucasdelima.client.xsdtojava.RespostaCriarProposta"/>
+                
+        </bindings>
+          
+    </bindings>
+    
+</bindings>

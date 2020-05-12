@@ -1,0 +1,11 @@
+com\lucasdelima\client\xsdtojava\LoteProposta.class
+com\lucasdelima\client\xsdtojava\ObjectFactory.class
+com\lucasdelima\client\xsdtojava\EnviarLoteResponse.class
+com\lucasdelima\client\xsdtojava\EnviarLote.class
+com\lucasdelima\client\xsdtojava\RespostaEnviarLote.class
+com\lucasdelima\client\xsdtojava\CodigoCBHPM.class
+com\lucasdelima\client\xsdtojava\FornecedorProposta.class
+com\lucasdelima\client\xsdtojava\Proposta.class
+com\lucasdelima\client\xsdtojava\RespostaCriarProposta.class
+com\lucasdelima\client\xsdtojava\package-info.class
+com\lucasdelima\client\xsdtojava\PropostaItem.class
