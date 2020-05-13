@@ -11,8 +11,8 @@ import org.springframework.ws.transport.http.HttpComponentsMessageSender;
 @Configuration
 public class ClientConfig {
 	
-	@Value("${defaul-uri}")
-	private String defaulUri;
+	@Value("${default-uri}")
+	private String defaultUri;
 	
 	@Value("${client-user-name}")
 	private String userName;
@@ -30,7 +30,7 @@ public class ClientConfig {
 	@Bean
 	public WebServiceTemplate webServiceTemplate() {
 		WebServiceTemplate webServiceTemplate = new WebServiceTemplate();
-		webServiceTemplate.setDefaultUri(defaulUri);
+		webServiceTemplate.setDefaultUri(defaultUri);
 		webServiceTemplate.setMarshaller(marshaller());
 		webServiceTemplate.setUnmarshaller(marshaller());
 		webServiceTemplate.setMessageSender(httpComponentsMessageSender());
