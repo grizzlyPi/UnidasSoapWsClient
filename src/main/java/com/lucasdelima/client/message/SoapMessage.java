@@ -1,5 +1,7 @@
 package com.lucasdelima.client.message;
 
+import javax.xml.bind.JAXBIntrospector;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -13,34 +15,34 @@ import com.lucasdelima.client.xsdtojava.LoteProposta;
 import com.lucasdelima.client.xsdtojava.Proposta;
 
 @Component
-public class SoapMessage extends WebServiceGatewaySupport{
-	
+public class SoapMessage extends WebServiceGatewaySupport {
+
 	@Autowired
 	private WebServiceTemplate template;
-	
+
 	@Value("${default-uri}")
 	private String defaultUri;
-	
-	public EnviarLoteResponse geLotetResponse() {
-		
+
+	public SoapMessage() {
+	}
+
+	public EnviarLoteResponse getLoteResponse() {
+
 		EnviarLote enviarLote = new EnviarLote();
 		LoteProposta loteProposta = new LoteProposta();
 		Proposta proposta = new Proposta();
-		
+
 		proposta.setPacienteNome("Alex Green");
-		proposta.setAnotacaoAdm("This is a java test!");
-		proposta.setNumeroProposta(1);
 		proposta.setProtocolo("123");
-		proposta.setAnexo("0360");
-		
-		loteProposta.setNumeroLote(99);
+
+		loteProposta.setNumeroLote(1);
 		loteProposta.getPropostas().add(proposta);
-		
+
 		enviarLote.setLote(loteProposta);
+
+		EnviarLoteResponse enviarLoteResponse = (EnviarLoteResponse) JAXBIntrospector
+				.getValue(template.marshalSendAndReceive(defaultUri, enviarLote, new SoapActionCallback(defaultUri)));
 		
-		EnviarLoteResponse enviarLoteResponse =  (EnviarLoteResponse) template
-				.marshalSendAndReceive(defaultUri, enviarLote, new SoapActionCallback(defaultUri));
-		
-		return enviarLoteResponse;	
+		return enviarLoteResponse;
 	}
 }
