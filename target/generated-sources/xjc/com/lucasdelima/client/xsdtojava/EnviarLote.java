@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
 // Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2020.05.12 às 10:08:15 PM BRT 
+// Gerado em: 2020.05.13 às 08:46:24 PM BRT 
 //
 
 
@@ -10,7 +10,6 @@ package com.lucasdelima.client.xsdtojava;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -37,7 +36,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "enviarLote", propOrder = {
     "lote"
 })
-@XmlRootElement(name = "enviarLote")
 public class EnviarLote {
 
     protected LoteProposta lote;
