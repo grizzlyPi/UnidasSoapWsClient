@@ -10,6 +10,7 @@ package com.lucasdelima.client.xsdtojava;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -36,6 +37,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "enviarLote", propOrder = {
     "lote"
 })
+@XmlRootElement(name = "enviarLote")
 public class EnviarLote {
 
     protected LoteProposta lote;
