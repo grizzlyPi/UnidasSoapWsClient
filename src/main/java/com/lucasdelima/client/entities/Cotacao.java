@@ -6,9 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class OpmeCotacao implements Serializable {
+@Table(name = "tb_cotacao")
+public class Cotacao implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -19,11 +21,11 @@ public class OpmeCotacao implements Serializable {
 	private Integer numeroProposta;
 	private String protocolo;
 	
-	public OpmeCotacao() {
+	public Cotacao() {
 		
 	}
 
-	public OpmeCotacao(Long id, String pacienteNome, Integer numeroProposta, String protocolo) {
+	public Cotacao(Long id, String pacienteNome, Integer numeroProposta, String protocolo) {
 		super();
 		this.id = id;
 		this.pacienteNome = pacienteNome;
@@ -79,7 +81,7 @@ public class OpmeCotacao implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		OpmeCotacao other = (OpmeCotacao) obj;
+		Cotacao other = (Cotacao) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

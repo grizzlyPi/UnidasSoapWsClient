@@ -1,4 +1,4 @@
-package com.lucasdelima.client.h2seeding;
+package com.lucasdelima.client.H2;
 
 import java.util.Arrays;
 
@@ -7,21 +7,21 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import com.lucasdelima.client.entities.OpmeCotacao;
-import com.lucasdelima.client.repositories.OpmeCotacaoRepository;
+import com.lucasdelima.client.entities.Cotacao;
+import com.lucasdelima.client.repositories.CotacaoRepository;
 
 @Component
 @Profile("test")
-public class DbSeeding implements CommandLineRunner {
+public class DataLoader implements CommandLineRunner {
 
 	@Autowired
-	private OpmeCotacaoRepository repo;
+	private CotacaoRepository repo;
 
 	@Override
 	public void run(String... args) throws Exception {
 		
-		OpmeCotacao c1 = new OpmeCotacao(null, "Bruce Wayne", 1, "11");
-		OpmeCotacao c2 = new OpmeCotacao(null, "Martha Wayne", 2, "12");
+		Cotacao c1 = new Cotacao(null, "Bruce Wayne", 1, "11");
+		Cotacao c2 = new Cotacao(null, "Martha Wayne", 2, "12");
 		
 		repo.saveAll(Arrays.asList(c1, c2));
 	}
