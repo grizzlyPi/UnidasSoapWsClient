@@ -9,6 +9,8 @@ import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 
+import com.lucasdelima.client.entities.OpmeCotacao;
+import com.lucasdelima.client.services.OpmeCotacaoService;
 import com.lucasdelima.client.xsdtojava.EnviarLote;
 import com.lucasdelima.client.xsdtojava.EnviarLoteResponse;
 import com.lucasdelima.client.xsdtojava.LoteProposta;
@@ -19,11 +21,15 @@ public class SoapMessage extends WebServiceGatewaySupport {
 
 	@Autowired
 	private WebServiceTemplate template;
+	
+	@Autowired
+	private OpmeCotacaoService service;
 
 	@Value("${default-uri}")
 	private String defaultUri;
 
 	public SoapMessage() {
+		
 	}
 
 	public EnviarLoteResponse getLoteResponse() {
@@ -32,8 +38,11 @@ public class SoapMessage extends WebServiceGatewaySupport {
 		LoteProposta loteProposta = new LoteProposta();
 		Proposta proposta = new Proposta();
 
-		proposta.setPacienteNome("Alex Green");
-		proposta.setProtocolo("123");
+		OpmeCotacao cotacao = service.getCotacao();
+		
+		proposta.setPacienteNome(cotacao.getPacienteNome());
+		proposta.setProtocolo(cotacao.getProtocolo());
+		proposta.setNumeroProposta(cotacao.getNumeroProposta());
 
 		loteProposta.setNumeroLote(1);
 		loteProposta.getPropostas().add(proposta);
